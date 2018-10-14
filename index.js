@@ -41,4 +41,35 @@ server.listen(3000,function(){
 io.on('connection',function(socket){
     console.log("nueva conexion");
     io.sockets.emit('lectura',5);
+    io.sockets.emit('ta',128);
+});
+
+
+var serialport = require('serialport');
+var Serialport = serialport.SerialPort;
+
+console.log('mensasje');
+
+const Readline = require('@serialport/parser-readline');
+
+var myport = new serialport("COM4",{
+    baudRate:9600,
+});
+
+const parser = myport.pipe(new Readline({delimiter:'\r\n'}));
+parser.on('data',onData);
+
+function onData(dato){
+    io.sockets.emit('lectura',dato);
+    console.log(dato); 
+}
+
+myport.on('open',onOpen);
+
+function onOpen(){
+    console.log("arduino conctado");
+}
+
+myport.on('error',function(err){
+    console.log(err);
 });
