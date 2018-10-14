@@ -1,2 +1,1 @@
-# EarthQ-WebPages
-EarthQ-Webpage
+# EarthQ-Webpage

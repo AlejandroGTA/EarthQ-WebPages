@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link media="all" type="text/css" rel="stylesheet" href="../public/css/main.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="socket.io/socket.io.js"></script>
+    <title>Earth-Q Indoor</title>
+</head>
+<body>
+    <script>
+        const socket = io("http://localhost:3000");
+        socket.on('lectura',function(dato){
+            console.log(dato);
+        });
+    </script>
+    <!-- header Earth-Q -->
+    <section class="hero-header">
+        <nav class="navbar is-info">
+            <div class="navbar-brand">
+                    <a class="navbar-item has-text-weight-bold" href="index.html">
+                            <span class=" icon">
+                                <i class="fas fa-globe"></i>
+                            </span>
+                            <span>Earth-Q</span>
+                        </a>
+                <!-- hamburguesa three layers -->
+                <div class="navbar-burger burger" data-target="navMenu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div> 
+             <!-- menu al final -->
+            <div class="navbar-menu" id="navMenu">
+                <div class="navbar-end">
+                    <!-- <a href="#" class="navbar-item">Home</a>
+                    <a href="#" class="navbar-item">How Does It Works?</a>
+                    <a href="#" class="navbar-item">Docs</a> -->
+                    <div class="navbar-start">
+                        <!-- menu dropdown -->
+                        <div class="navbar-item has dropdown is-hoverable">
+                            <a href="#" class="navbar-link is-active">Search</a>
+                            <!-- elementos dropdown -->
+                            <div class="navbar-dropdown">
+                                <a href="#" class="navbar-item">Home</a>
+                                <a href="secondary.html" class="navbar-item">How Does It Works?</a>
+                                <a href="#" class="navbar-item">Real time monitoring</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- breadcrumb menu -->
+        <nav class="breadcrumb has-bullet-separator is-right has-background-light" id="breadcrumb" aria-label="breadcrumbs">
+            <a class="button is-success is-pulled-left is-marginless" href="index.html">
+            <span class="icon">
+            <i class="far fa-lightbulb"></i>
+            </span>
+            <span class="has-text-weight-light">Center care</span>
+            </a>  
+            <ul>
+                <li class="is-active">
+                <a href="#">
+                    <span class="icon is-small">
+                    <i class="fas fa-home" aria-hidden="true"></i>
+                    </span>
+                    <span class="has-text-weight-light">Home</span>
+                </a>
+                </li>
+                <li>
+                <a href="secondary.html">
+                    <span class="icon is-small">
+                    <i class="fas fa-book" aria-hidden="true"></i>
+                    </span>
+                    <span class="has-text-weight-light">How Does It Works?</span>
+                </a>
+                </li>
+                <li>
+                <a href="realtime.html">
+                    <span class="icon is-small">
+                    <i class="fas fa-chalkboard" aria-hidden="true"></i>
+                    </span>
+                    <span class="has-text-weight-light">Real Time Monitoring</span>
+                </a>
+                </li>
+            </ul>
+        </nav>
+    </section>
+        <!-- principal content -->
+    <div class="hero is-small">
+        <div class="container">
+            <article class="hero is-danger is-pulled-left">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title is-3">
+                            WE promote prevention
+                            </h1>
+                            <h2 class="subtitle is-6">
+                            Through our system you can definetely trust us
+                            </h2>
+                            <a class="button is-primary" href="graphics.html">More information</a>
+                        </div>
+                    </div>
+            </article>
+            <article class="hero is-info is-pulled-right">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title is-3">
+                            Data visibility
+                            </h1>
+                            <h2 class="subtitle is-6">
+                            Our system allows you to always be in touch with your data created by ours sensors
+                            <br>
+                            thanks to our nodes interconected through certain servers
+                            <br>
+                            </h2>
+                            <p class="has-text-weight-light">Do not miss a thing!</p><br>
+                            <a class="button is-primary is-loading" href="secondary.html">More information</a>
+                            <p class="has-text-weight-light subtitle is-7">Oops! Looks like it is not working properly<p>
+                        </div>
+                    </div>
+            </article>
+            <article class="hero is-dark is-pulled-left">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title is-3">
+                            Contact us
+                            </h1>
+                            <h2 class="subtitle is-6">
+                            If you have any question about our software that is not verified here, please contact us with your very doubt.
+                            </h2>
+                            <a class="button is-primary is-info" href="graphics.html">Developers</a>
+                        </div>
+                    </div>
+            </article>
+        </div>
+        <footer class="footer has-background-black-bis">
+            <div class="bd is-paddingless">
+                <nav class="navbar is-dark">
+                    <div class="navbar-brand">
+                        <a class="navbar-item" href="index.html">
+                            <img src="https://bulma.io/images/placeholders/150x90.png" alt="Earth-Q: Project" width="115" height="95">
+                        </a>
+                        <div class="navbar-burger burger" data-target="navMenuColordark">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <div id="navMenuColordark" class="navbar-menu">
+                        <div class="navbar-start">
+                            <a class="navbar-item" href="index.html">
+                            Home
+                            </a>
+                            <div class="navbar-item has-dropdown is-hoverable">
+                                <a class="navbar-link" href="/secondary.html">
+                                How Do You Do That?
+                                </a>
+                                <div class="navbar-dropdown">
+                                    <a class="navbar-item" href="/graphics.html">
+                                        Graphics
+                                    </a>
+                                    <a class="navbar-item" href="/realtime.html">
+                                        Real time system
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="navbar-end">
+                            <div class="navbar-item">
+                                <div class="field is-grouped">
+                                <p class="control">
+                                    <a class="bd-tw-button button" data-social-network="Twitter" data-social-action="tweet" data-social-target="http://localhost:3000" target="_blank" href="#">
+                                    <span class="icon">
+                                        <i class="fab fa-twitter"></i>
+                                    </span>
+                                    <span>
+                                        Tweet
+                                    </span>
+                                    </a>
+                                </p>
+                                <p class="control">
+                                    <a class="button is-primary" href="#" target="_blank">
+                                    <span class="icon">
+                                        <i class="fas fa-download"></i>
+                                    </span>
+                                    <span>Download</span>
+                                    </a>
+                                </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+
+<!-- justify-content: center;
+display: flex;
+align-items: center; -->
