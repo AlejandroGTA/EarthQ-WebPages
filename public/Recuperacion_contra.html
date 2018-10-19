@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Recuperacion de contraseñas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="/Actividad_1.4/ass/css/Recordar/Recordar.css" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <main>
+        <header>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbLeX1N5X9SGb7RWgcC7FWPtNnNTM2FA5jEu96ce0fQ5mEPJs" alt="Logo">
+            <h1>MoviesAF</h1>
+        </header>
+        <div>
+            <div>
+                <h4>Recuperar contraseña</h4>
+                <p>
+                    Una vez que ingresas la información que se solicita y des click en 
+                    el botón "Recuperar"; se te enviara un enlace a 
+                    tu correo electrónico para recuperar tu contraseña
+                </p>
+            </div>
+            <form action="/Actividad_1.4/index.html" method="POST">
+                <div>
+                    <label for="idusuario">Nombre de usuario</label> <br>
+                    <input id="idusuario" class="texto" type="text" required>
+                </div>
+                <div>
+                    <label for="idcorreo">Correo electrónico</label> <br>
+                    <input id="idcorreo" class="texto" type="text" required>
+                </div>
+                <div>
+                    <br>
+                    <input class="Recuperar" type="submit" value="Recuperar">
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>

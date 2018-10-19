@@ -7,7 +7,14 @@
     <link media="all" type="text/css" rel="stylesheet" href="../public/css/main.css">
     <script src="../public/librerias/smoothie.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="socket.io/socket.io.js"></script>
     <title>Earth-Q Indoor</title>
+    <script>
+            // var socket = io("http://localhost:3000");
+            // socket.on('lectura',function(dato){
+            //     console.log(dato);
+            // });
+        </script>
 </head>
 <body>
     <section class="hero is-info is-large">
@@ -51,16 +58,6 @@
                 </div>
             </nav>
         </div>
-        <div class="hero-body has-text-centered" style="padding-top: 5%">
-            <!-- <div class="tile is-ancestor">
-                <div class="tile is-danger has-text-centered">
-                    Im a motherfucking red title
-                </div>
-            </div> -->
-            <p class="title is-2">Graphic system in real time</p>
-            <br>
-            <canvas id="canva"  width="500" height="200" ></canvas>
-        </div>
         <div class="hero-foot">
             <nav class="tabs is-boxed is-fullwidth">
                 <div class="container">
@@ -81,8 +78,45 @@
                 </div>
             </nav>
         </div>
+        <div class="hero-body has-text-centered" style="padding-top: 5%">
+            <!-- <div class="tile is-ancestor">
+                <div class="tile is-danger has-text-centered">
+                    Im a motherfucking red title
+                </div>
+            </div> -->
+            <p class="title is-2">Graphic system in real time</p>
+            <br>
+            <canvas id="canva"  width="500" height="200" ></canvas>
+        </div>
+        <!-- <div class="hero-foot">
+            <nav class="tabs is-boxed is-fullwidth">
+                <div class="container">
+                    <ul>
+                        <li>
+                            <a href="#">Overview</a>
+                        </li>
+                        <li>
+                            <a href="secondary.html">How Does It Works?</a>
+                        </li>
+                        <li class="is-active">
+                            <a href="graphics.html">Graphics</a>
+                        </li>
+                        <li>
+                            <a href="realtime.html">System in real time</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div> -->
     </section>
     <script>
+        var le;
+        var socket = io("http://localhost:3000");
+            socket.on('lectura',function(dato){
+                console.log(dato);
+                le = dato;
+            });
+            console.log(le);
         var smoothie = new SmoothieChart({
             grid: { strokeStyle:'rgb(0, 0, 0)', fillStyle:'rgb(241, 237, 215)',
             lineWidth: 1, millisPerLine: 500, verticalSections: 6, },
@@ -99,7 +133,7 @@
         setInterval(function(){
             line1.append(new Date().getTime(), Math.cos(Math.random()*100));
             line2.append(new Date().getTime(), Math.cos(Math.random()*50));
-            line3.append(new Date().getTime(), 0);
+            line3.append(new Date().getTime(), le);
             // line1.append(new Date(), dato1);
             // line2.append(new Date(), dato2);
             // line3.append(new Date(), dato3);
